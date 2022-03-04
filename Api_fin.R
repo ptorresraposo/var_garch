@@ -1,3 +1,4 @@
+# Utiliza la API de fintual para estimar el VaR 5% de un FFMM Chileno
 # Carga Librerias
 library(zoo)
 library(rugarch)
