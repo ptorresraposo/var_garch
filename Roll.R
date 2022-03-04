@@ -1,4 +1,4 @@
-n_refits =50
+n_refits =100
 
 # Fondo_A -----------------------------------------------------------------
 
@@ -26,37 +26,11 @@ for (i in 1:n_spec)
     keep.coef = TRUE
   )
 
-roll_A_norm = vector(mode = 'list', length = 9)
-for (i in 37:n_spec)
-  roll_A_norm[[i-36]] = ugarchroll(
-    spec_A[[i]],
-    ret_A,
-    n.ahead = 1,
-    n.start = 247,
-    refit.every = n_refits,
-    refit.window = 'moving',
-    #   windows.size = 741,
-    solver = 'nloptr',
-    #   solver = 'solnp',
-    #   solver.control = list(tol = 1e-06, delta = 1e-07),
-    #   solver.control = list(tol = 1e-12, delta = 1e-13),
-    #   solver.control = list(tol = 1e-12, delta = 1e-13, trace = 1),
-    solver.control = list("solver" = 8),
-    #   solver.control = list(trace = 1),
-    #   fit.control = list(scale = 1),
-    #   cluster = cluster,
-    calculate.VaR = TRUE,
-    VaR.alpha = c(0.01),
-    keep.coef = TRUE
-  )
-
 roll_A_total = vector(mode = 'list', length = 45)
 
-for (i in 1:36) 
+for (i in 1:45) 
   roll_A_total[[i]] <- roll_A[[i]]
 
-for (i in c(1,2,3,4,5,6,7,8,9))
- roll_A_total[[i+36]] <- roll_A_norm[[i]]
 
 # Fondo_C -----------------------------------------------------------------
 
