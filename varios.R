@@ -16,10 +16,6 @@ library("forecast")
 
 ColClasses = c("character", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric")
 data_A <- as.xts(read.zoo("C:/Users/patricio.torres/Google Drive/Educación/Magister en Finanzas - Fen Uchile/Cursos/13. Tesis/VC - Spensiones/fondoA2002-2019.csv", header = TRUE, index.column = 1 , sep = ";", tz="", format = "%d-%m-%Y", colClasses = ColClasses))
-data_A_tmp <- as.xts(read.zoo(xxxx, header = TRUE, index.column = 1 , sep = ";", tz="", format = "%d-%m-%Y", colClasses = ColClasses))
-
-
-
 data_C <- as.xts(read.zoo("C:/Users/patricio.torres/Google Drive/Educación/Magister en Finanzas - Fen Uchile/Cursos/13. Tesis/VC - Spensiones/fondoC2002-2019.csv", header = TRUE, index.column = 1 , sep = ";", tz="", format = "%d-%m-%Y", colClasses = ColClasses))
 data_E <- as.xts(read.zoo("C:/Users/patricio.torres/Google Drive/Educación/Magister en Finanzas - Fen Uchile/Cursos/13. Tesis/VC - Spensiones/fondoE2002-2019.csv", header = TRUE, index.column = 1 , sep = ";", tz="", format = "%d-%m-%Y", colClasses = ColClasses))
 

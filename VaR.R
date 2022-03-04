@@ -12,15 +12,39 @@ library("xtable")
 # carga_datos y retornos -------------------------------------------------------------
 
 ColClasses = c("character", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric")
-data_A <- as.xts(read.zoo("fondoA2002-2019.csv", header = TRUE, index.column = 1 , sep = ";", tz="", format = "%d-%m-%Y", colClasses = ColClasses))
-data_C <- as.xts(read.zoo("fondoC2002-2019.csv", header = TRUE, index.column = 1 , sep = ";", tz="", format = "%d-%m-%Y", colClasses = ColClasses))
-data_E <- as.xts(read.zoo("fondoE2002-2019.csv", header = TRUE, index.column = 1 , sep = ";", tz="", format = "%d-%m-%Y", colClasses = ColClasses))
+data_A <- as.xts(read.zoo("https://raw.githubusercontent.com/ptorresraposo/data/main/fondoA2002-2019.csv", header = TRUE, index.column = 1 , sep = ";", tz="", format = "%d-%m-%Y", colClasses = ColClasses))
+data_C <- as.xts(read.zoo("https://raw.githubusercontent.com/ptorresraposo/data/main/fondoC2002-2019.csv", header = TRUE, index.column = 1 , sep = ";", tz="", format = "%d-%m-%Y", colClasses = ColClasses))
+data_E <- as.xts(read.zoo("https://raw.githubusercontent.com/ptorresraposo/data/main/fondoE2002-2019.csv", header = TRUE, index.column = 1 , sep = ";", tz="", format = "%d-%m-%Y", colClasses = ColClasses))
 
 # genera retornos
 
 ret_A <- na.omit(data_A["20020927/20190729","ret_pond_A"])
 ret_C <- na.omit(data_C["20020927/20190729","ret_pond_C"])
 ret_E <- na.omit(data_E["20020927/20190729","ret_pond_E"])
+
+# Data descriptiva y test
+
+descriptiva <- describe(merge(ret_A,ret_C,ret_E))
+descriptiva
+
+jarque.bera.test(ret_A)
+jarque.bera.test(ret_C)
+jarque.bera.test(ret_E)
+
+jarque.bera.test(ret_A)
+jarque.bera.test(ret_C)
+jarque.bera.test(ret_E)
+
+adf.test(ret_A)
+adf.test(ret_C)
+adf.test(ret_E)
+
+# grafica
+
+plot(x=as.zoo(merge(data_A[,17],data_C[,17],data_E[,17])/1000000000), xlab="Time", ylab = "MM$ CLP",col = c("red", "blue", "darkgreen"), screens = 1)
+legend(x = "topleft", legend = c("A", "C", "E"), lty = 1, col = c("red", "blue", "darkgreen"))
+
+plot(x=as.zoo(merge(data_A[,35],data_C[,35],data_E[,35])), xlab="Time", ylab = c("A", "C", "E"), main = "" , col = c("red", "blue", "darkgreen"), ylim=c(-0.06,0.06))
 
 
 
