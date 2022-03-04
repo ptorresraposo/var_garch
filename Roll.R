@@ -1,3 +1,5 @@
+# Código para realizar un roll de estimación VAR 5% con distintos tipos de distriuciones del error condicional
+
 n_refits =100
 
 # Fondo_A -----------------------------------------------------------------
