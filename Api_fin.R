@@ -1,5 +1,5 @@
 # Utilizando la API de fintua se estima el VaR al 5% a utilizando distintos modelos GARCH y con distintas 
-# distribuciones del error condicionales para los fondos fondos mutuos de Chile
+# distribuciones del error condicional para los fondos fondos mutuos de Chile
 
 
 # Carga Librerias
