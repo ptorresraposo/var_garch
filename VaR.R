@@ -1,5 +1,5 @@
 # Permite cargar y estimar VaR al 5% a través de distintos modelos GARCH y con distintas 
-# distribuciones del error condicionales para los fondos A, C y E de las AFP
+# distribuciones del error condicional para los fondos A, C y E de las AFP
 
 
 # Carga Librerias
